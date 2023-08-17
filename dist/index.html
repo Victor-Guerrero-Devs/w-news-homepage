@@ -1,145 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <title></title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="./output.css" rel="stylesheet" />
     <script defer src="./output.js"></script>
-  </head>
+</head>
 
-  <body>
+<body>
     <!-- MODAL -->
-    <div
-      id="modal"
-      class="absolute top-0 left-0 w-full h-full bg-slate-800/70 hidden"
-    ></div>
+    <div id="modal" class="absolute top-0 left-0 w-full h-full bg-slate-800/70 hidden"></div>
     <!-- SIDEDRAWER -->
-    <aside
-      id="sideDrawer"
-      class="fixed z-10 top-0 right-0 translate-x-full h-full w-64 bg-gray-100 transition-transform transform ease-in-out duration-300"
-    >
-      <div class="flex flex-col h-full p-4 text-white">
-        <ul class="flex flex-col gap-6 pt-16 pl-4">
-          <li><a href="#" class="text-gray-800 text-xl">Home</a></li>
-          <li><a href="#" class="text-gray-800 text-xl">New</a></li>
-          <li><a href="#" class="text-gray-800 text-xl">Popular</a></li>
-          <li><a href="#" class="text-gray-800 text-xl">Trending</a></li>
-          <li><a href="#" class="text-gray-800 text-xl">Categories</a></li>
-        </ul>
-      </div>
-      <button
-        id="closeBtn"
-        class="absolute top-4 right-4 p-2 bg-gray-800 text-white rounded-lg"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="h-6 w-6"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M6 18L18 6M6 6l12 12"
-          ></path>
-        </svg>
-      </button>
+    <aside id="sideDrawer"
+        class="fixed z-10 top-0 right-0 translate-x-full h-full w-64 sm:w-84 bg-gray-100 transition-transform transform ease-in-out duration-300">
+        <div class="flex flex-col h-full p-4 text-white">
+            <ul class="flex flex-col gap-6 pt-16 pl-4">
+                <li><a href="#" class="text-gray-800 text-xl">Home</a></li>
+                <li><a href="#" class="text-gray-800 text-xl">New</a></li>
+                <li><a href="#" class="text-gray-800 text-xl">Popular</a></li>
+                <li><a href="#" class="text-gray-800 text-xl">Trending</a></li>
+                <li><a href="#" class="text-gray-800 text-xl">Categories</a></li>
+            </ul>
+        </div>
+        <button id="closeBtn" class="absolute top-4 right-4 p-2 bg-gray-800 text-white rounded-lg">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+        </button>
     </aside>
     <!-- HEADER -->
     <header>
-      <div
-        class="container mx-auto p-4 flex flex-row justify-between items-center"
-      >
-        <figure class="flex justify-center items-center">
-          <img
-            class="w-12 h-12 object-contain"
-            src="./assets/images/logo.svg"
-            alt="logo"
-          />
-        </figure>
-        <nav class="hidden md:block">
-          <ul class="flex flex-row gap-6">
-            <li>
-              <a href="#" class="text-gray-600 hover:text-orange-400 text-lg"
-                >Home</a
-              >
-            </li>
-            <li>
-              <a href="#" class="text-gray-600 hover:text-orange-400 text-lg"
-                >New</a
-              >
-            </li>
-            <li>
-              <a href="#" class="text-gray-600 hover:text-orange-400 text-lg"
-                >Popular</a
-              >
-            </li>
-            <li>
-              <a href="#" class="text-gray-600 hover:text-orange-400 text-lg"
-                >Trending</a
-              >
-            </li>
-            <li>
-              <a href="#" class="text-gray-600 hover:text-orange-400 text-lg"
-                >Categories</a
-              >
-            </li>
-          </ul>
-        </nav>
-        <figure class="cursor-pointer md:hidden text-black" id="openBtn">
-          <img src="./assets/images/icon-menu.svg" alt="open mobile menu" />
-        </figure>
-      </div>
+        <div class="container mx-auto p-4 flex flex-row justify-between items-center">
+            <figure class="flex justify-center items-center">
+                <img class="w-12 h-12 object-contain" src="./assets/images/logo.svg" alt="logo" />
+            </figure>
+            <nav class="hidden md:block">
+                <ul class="flex flex-row gap-6">
+                    <li>
+                        <a href="#" class="text-gray-600 hover:text-orange-400 text-lg">Home</a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-gray-600 hover:text-orange-400 text-lg">New</a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-gray-600 hover:text-orange-400 text-lg">Popular</a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-gray-600 hover:text-orange-400 text-lg">Trending</a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-gray-600 hover:text-orange-400 text-lg">Categories</a>
+                    </li>
+                </ul>
+            </nav>
+            <figure class="cursor-pointer md:hidden text-black" id="openBtn">
+                <img src="./assets/images/icon-menu.svg" alt="open mobile menu" />
+            </figure>
+        </div>
     </header>
     <!-- MAIN SECTION -->
     <main class="container mx-auto p-4">
-      <!-- GRID CONTAINER -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <!-- MAIN ARTICLE -->
-        <section class="md:col-span-2">
-          <div class="md:grid md:grid-cols-2 md:gap-8">
-            <figure class="md:col-span-2 pb-6 md:pb-0">
-              <img
-                src="./assets/images//image-web-3-mobile.jpg"
-                alt="puzzle pieces"
-                class="object-contain md:hidden"
-              />
-              <img
-                src="./assets/images/image-web-3-desktop.jpg"
-                alt="desktop puzzle pieces"
-                class="hidden md:block object-contain"
-              />
-            </figure>
-            <div class="md:col-span-2 pt-4 md:pt-0 flex flex-col lg:flex-row">
-              <h1
-                class="text-5xl xl:text-6xl font-black leading-none pr-8 lg:pr-16 lg:min-w-[50%]"
-              >
-                The Bright Future of Web 3.0?
-              </h1>
-              <div class="pt-4 flex flex-col justify-between gap-6 md:gap-0">
-                <p class="text-gray-600 pb-4 xl:text-lg">
-                  We dive into the next evolution of the web that claims to put
-                  the power of the platforms back into the hands of the people.
-                  But is it really fufilling its promise?
-                </p>
-                <button
-                  type="button"
-                  class="px-6 py-3 uppercase tracking-widest text-white bg-orange-600 hover:bg-black duration-200 max-w-[250px]"
-                >
-                  Read More
-                </button>
-              </div>
-            </div>
-          </div>
+        <!-- GRID CONTAINER -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <!-- MAIN ARTICLE -->
+            <section class="md:col-span-2">
+                <div class="md:grid md:grid-cols-2 md:gap-8">
+                    <figure class="md:col-span-2 pb-6 md:pb-0">
+                        <img src="./assets/images/image-web-3-mobile.jpg" alt="puzzle pieces"
+                            class="object-contain md:hidden" />
+                        <img src="./assets/images/image-web-3-desktop.jpg" alt="desktop puzzle pieces"
+                            class="hidden md:block object-contain" />
+                    </figure>
+                    <div class="md:col-span-2 pt-4 md:pt-0 flex flex-col lg:flex-row">
+                        <h1 class="text-5xl xl:text-6xl font-black leading-none pr-8 lg:pr-16 lg:min-w-[50%]">
+                            The Bright Future of Web 3.0?
+                        </h1>
+                        <div class="pt-4 flex flex-col justify-between gap-6 md:gap-0">
+                            <p class="text-gray-600 pb-4 xl:text-xl">
+                                We dive into the next evolution of the web that claims to put
+                                the power of the platforms back into the hands of the people.
+                                But is it really fufilling its promise?
+                            </p>
+                            <button type="button"
+                                class="px-6 py-3 uppercase tracking-widest text-white bg-orange-600 hover:bg-black duration-200 max-w-[250px]">
+                                Read More
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- NEW ARTICLES -->
+            <section class="md:col-span-1 bg-slate-900 mt-8 md:mt-0">
+                <div class="flex flex-col gap-6 p-6 xl:h-full  xl:my-auto">
+                    <h2 class="text-3xl xl:text-5xl font-bold text-amber-400">New</h2>
+                    <div>
+                        <h3
+                            class="text-xl xl:text-3xl font-bold pb-2 text-slate-100 cursor-pointer hover:text-amber-200">
+                            Hydrogen vs Electric Cars
+                        </h3>
+                        <p class="text-md xl:text-xl  text-slate-300">
+                            Will hydrogen-fueled cars ever catch up to EVs?
+                        </p>
+                    </div>
+                    <div class="border-[0.25px] bg-slate-300"></div>
+                    <div>
+                        <h3
+                            class="text-xl  xl:text-3xl font-bold pb-2 text-slate-100 cursor-pointer hover:text-amber-200">
+                            The Downsides of AI Artistry
+                        </h3>
+                        <p class="text-md  xl:text-xl text-slate-300">
+                            What are the potential adverse effects of on-demand AI image generation?
+                        </p>
+                    </div>
+                    <div class="border-[0.25px] bg-slate-300"></div>
+                    <div>
+                        <h3
+                            class="text-xl f xl:text-3xl font-bold pb-2 text-slate-100 cursor-pointer hover:text-amber-200">
+                            Is VC Funding Drying Up?
+                        </h3>
+                        <p class="text-md xl:text-xl text-slate-300">
+                            Private funding by VC firms is down 50% YOY. We take a look at what it means.
+                        </p>
+                    </div>
+                </div>
+        </div>>
+        </div>
         </section>
-        <!-- NEW ARTICLES -->
-        <section class="md:col-span-1">new articles</section>
         <!-- POPULAR ARTICLES -->
         <section class="md:col-span-3">popular articles</section>
-      </div>
+        </div>
     </main>
-  </body>
+</body>
+
 </html>
